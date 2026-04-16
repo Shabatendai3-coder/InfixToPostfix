@@ -1,0 +1,32 @@
+BEGIN
+
+Create empty stack
+Create empty output string
+
+FOR each character in infix expression
+
+    IF character is operand
+        Add to output
+
+    ELSE IF character is '('
+        Push to stack
+
+    ELSE IF character is ')'
+        WHILE top of stack is not '('
+            Pop from stack and add to output
+        Pop '(' from stack
+
+    ELSE IF character is operator
+        WHILE stack is not empty AND
+              precedence(top of stack) >= precedence(current operator)
+            Pop from stack and add to output
+        Push current operator to stack
+
+END FOR
+
+WHILE stack is not empty
+    Pop from stack and                                                                                                                                                                                                                              add to output
+
+PRINT output
+
+END
